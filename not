@@ -1,0 +1,29 @@
+user-
+    profile - password ,name
+    packages booking  ( cancle/book)   
+
+
+
+    list review same ui
+
+admin-
+    tables 
+        list all packages
+        list users -readonly
+        list bookings
+        list contact us list
+
+        
+        list review - delete option same ui
+        
+
+
+
+
+   
+
+
+
+git remote add origin https://github.com/neha-2000/tours-web.git
+git branch -M main
+git push -u origin main

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <title>Document</title>
+
+    <!-- <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" /> -->
+
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+
+    <!-- font awesome cdn link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+    <link rel="stylesheet" href="index.css">
+
+    
+   
+</head>
+
+
+<body>
+    <!-- Header -->
+    <header>
+
+        <div id="menu-bar" class="fas fa-bars"></div>
+
+        <a href="#" class="logo"><span>T</span>ravel</a>
+
+        <nav class="navbar">
+            <a href="/#home">home</a>
+            <a href="/#book">book</a>
+            <a href="/#packages">packages</a>
+            <a href="/#services">services</a>
+            <a href="/#gallery">gallery</a>
+            <a href="/#review">review</a>
+            <a href="/#contact">contact</a>
+        </nav>
+
+        <div class="icons">
+            <!-- <i class="fas fa-search" id="search-btn"></i>            
+            <span id="login-btn"> SignIn</span>
+            <span id="Register-btn"> SignUp</span> -->
+
+            <i class="fas fa-user" id="login-btn"></i>
+            <span id="Logout-btn"> Logout</span> -->
+        </div>
+
+        <form action="" class="search-bar-container">
+            <input type="search" id="search-bar" placeholder="search here...">
+            <label for="search-bar" class="fas fa-search"></label>
+        </form>
+    </header>
+    <!-- End -->
+    <br/><br/><br/>
+    <br/><br/><br/>
+    <br/><br/><br/>
+    <div id="display-element"></div>
+
+       <!-- book section starts -->
+
+
+
+       <section class="book" id="book">
+        <h1 class="heading">
+            <span>b</span>
+            <span>o</span> 
+            <span>o</span>
+            <span>k</span> 
+            <span class="space"></span>
+            <span>n</span> 
+            <span>o</span>
+            <span>w</span>
+        </h1>
+
+        <div class="row">
+            <div class="image">
+                <img src="images/book-img.svg" alt="">
+            </div>
+
+            <form action="">
+                <div class="inputBox">
+                    <h3>where to</h3>
+                    <input type="text" placeholder="place name">
+                </div>
+                <div class="inputBox">
+                    <h3>how many</h3>
+                    <input type="number" placeholder="number of guests">
+                </div>
+                <div class="inputBox">
+                    <h3>arrivals</h3>
+                    <input type="date">
+                </div>
+                <div class="inputBox">
+                    <h3>leaving</h3>
+                    <input type="date">
+                </div>
+                <input type="submit" class="btn" value="book now">
+            </form>
+        </div>
+     </section>
+      <!-- book section ends -->
+
+
+
+
+    <script>
+       const orderID = sessionStorage.getItem("orderID");
+
+        const displayElement = document.querySelector('#display-element');
+        displayElement.innerHTML = `Order ID: ${orderID}`;
+    </script>
+
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+<script src="script.js"></script>
+</body>
+
+</html>
