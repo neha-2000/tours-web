@@ -10,7 +10,7 @@ admin-
     tables 
         list all packages
         list users -readonly
-        list bookings
+        list bookingsgit 
         list contact us list
 
         
