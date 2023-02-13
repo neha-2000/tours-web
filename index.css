@@ -711,6 +711,8 @@ padding: 1rem 0;
     width: 90%;
     justify-content: center;
     align-items: center;
+    position: fixed;
+    top: 100px;
   }
 
   .admin-btns{
@@ -725,6 +727,15 @@ padding: 1rem 0;
   }
 
 
+  .admin-btns:hover {
+    width: 30%;
+    height: 51px;
+    background: orange;
+    font-size: 24px;
+    cursor: pointer;
+    color: white;
+    border-left: 1px solid orange;
+  }
   .screen{
     
     display: flex;
