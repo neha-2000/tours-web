@@ -72,7 +72,8 @@
 
     <br /><br /><br />
     <br /><br /><br />
-    <br /><br /><br /><br /><br /><br />
+    <br /><br /><br />
+    <br /><br /><br />
     <div class="admin-box">
       <button class="admin-btns" id="Users-btn" onclick="changeScreen(this)">
         Users
@@ -85,7 +86,7 @@
       </button>
     </div>
 
-    <div id="users-screen">
+    <div id="users-screen" class="screen">
       <form>
         <input
           type="text"
@@ -104,7 +105,7 @@
         </tr>
       </table>
     </div>
-    <div id="packages-screen">
+    <div id="packages-screen" class="screen">
       <button
         type="button"
         id="addPackageButton"
@@ -151,7 +152,7 @@
         </form>
       </div>
     </div>
-    <div id="bookings-screen">
+    <div id="bookings-screen" class="screen">
       <input type="text" class="searchBar" id="bookingSearchBar" onkeyup="searchBookingFunction()" placeholder="Search for names..">
   
       <table class="bookingsTable" id="bookingsTable">

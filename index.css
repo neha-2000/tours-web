@@ -706,14 +706,121 @@ padding: 1rem 0;
 
   .admin-box{
     display: flex;
-    justify-content: space-around;
+    /* justify-content: space-around; */
     flex-wrap: wrap;
+    width: 90%;
+    justify-content: center;
+    align-items: center;
   }
 
   .admin-btns{
     width: 30%;
     height: 51px;
-    background: #ffa5009c;
+    background: rgba(255, 165, 0,.2);
     font-size: 24px;
-    border-radius: 42px;
+    /* border-radius: 42px; */
+    cursor: pointer;
+    color: orange;
+    border-left: 1px solid orange;
   }
+
+
+  .screen{
+    
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    position: fixed;
+    top: 205px;
+    overflow: scroll;
+    
+}
+
+table{
+  width: 90%;
+}
+
+tbody{
+  background: red;
+  background: #333333a6;
+  color: white;
+  width: 100%;
+  height: 43px;
+  font-size: 17px;
+}
+
+tr{
+  height: 50px;
+    font-size: 15px;
+    text-align: center;
+}
+
+.container {
+  display: flex;
+  justify-content: left;
+  flex-direction: column;
+  align-items: center;
+  align-content: left;
+}
+
+.user-info {
+  width: 100%;
+  text-align: left;
+}
+
+.user-info-header {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  background: #ffa5004f;
+  color: orange;
+  width: 243px;
+  margin-left: 20px;
+  text-align: center;
+}
+
+.user-info-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.user-info-table td {
+  padding: 8px;
+  border: 1px solid gray;
+}
+
+.user-bookings {
+  
+  text-align: left;
+  width: 100%;
+
+}
+
+.user-bookings-header {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  background: #ffa5004f;
+  color: orange;
+  width: 243px;
+  margin-left: 20px;
+  text-align: center;
+}
+
+.user-bookings-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.user-bookings-table th {
+  padding: 8px;
+  border: 1px solid gray;
+  background-color: lightgray;
+}
+
+.user-bookings-table td {
+  padding: 8px;
+  border: 1px solid gray;
+}

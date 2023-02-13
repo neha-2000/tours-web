@@ -79,6 +79,9 @@ function changeScreen(data) {
 }
 
 function reloadPackage() {
+    document.getElementById('users-screen').style.overflow = '0px';
+        document.getElementById('packages-screen').style.overflow = '0px';
+        document.getElementById('bookings-screen').style.overflow = '0px';
     fetch("http://localhost:8080/api/packages")
         .then(response => {
             if (response.ok) {
