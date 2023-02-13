@@ -824,3 +824,23 @@ tr{
   padding: 8px;
   border: 1px solid gray;
 }
+
+.mysearch{
+  height: 35px;
+    background: #0000002e;
+    border-radius: 5px;
+    color: black;
+    padding: 20px;
+    width: 200px;
+
+}
+form{
+  margin: 2rem;
+    padding: 1.5rem 2rem;
+    border-radius: 0.5rem;
+    background: #fff;
+    width: 50rem;
+    display: flex;
+    justify-content: space-around;
+
+}

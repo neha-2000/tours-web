@@ -93,8 +93,13 @@
           id="myInput"
           onkeyup="searchUserFunction()"
           placeholder="Search for names.."
+          class="mysearch"
         />
-        <button type="button" style="background-color: orange">Search</button>
+        <button type="button"  style="background-color: rgba(255, 166, 0, 0.401); float: right ;padding: 10px;
+        border-radius: 10px;
+        cursor: pointer;
+        color: orange;"
+        >Search</button>
       </form>
 
       <table id="myUserTable">
@@ -106,22 +111,34 @@
       </table>
     </div>
     <div id="packages-screen" class="screen">
-      <button
-        type="button"
-        id="addPackageButton"
-        style="background-color: orange; float: right"
-      >
-        Add Package
-      </button>
+      
       <form>
         <input
           type="text"
           id="myPackageInput"
           onkeyup="searchPackageFunction()"
+          class="mysearch"
           placeholder="Search for names.."
         />
-        <button type="button" style="background-color: orange">Search</button>
+        <button type="button" 
+        style="background-color: rgba(255, 166, 0, 0.401); float: right ;padding: 10px;
+        border-radius: 10px;
+        cursor: pointer;
+        color: orange;"
+        
+       >Search</button>
+        <button
+        type="button"
+        id="addPackageButton"
+        style="background-color: orange; float: right ;padding: 10px;
+        border-radius: 10px;
+        cursor: pointer;
+        color: white;"
+      >
+        Add Package + 
+      </button>
       </form>
+     
 
       <table id="packageTable">
         <tr>
@@ -153,7 +170,7 @@
       </div>
     </div>
     <div id="bookings-screen" class="screen">
-      <input type="text" class="searchBar" id="bookingSearchBar" onkeyup="searchBookingFunction()" placeholder="Search for names..">
+      <input type="text"   class="mysearch"  id="bookingSearchBar" onkeyup="searchBookingFunction()" placeholder="Search for names..">
   
       <table class="bookingsTable" id="bookingsTable">
         <tr>
