@@ -37,6 +37,7 @@ window.onload = function () {
         .catch(error => {
             console.error("Fetch error:", error);
         });
+        
     fetch(`http://localhost:8080/api/bookings`)
         .then(response => {
             if (response.ok) {
