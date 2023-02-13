@@ -1,0 +1,53 @@
+.container {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .user-info {
+    width: 40%;
+    text-align: left;
+  }
+  
+  .user-info-header {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  .user-info-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .user-info-table td {
+    padding: 8px;
+    border: 1px solid gray;
+  }
+  
+  .user-bookings {
+    width: 60%;
+    text-align: left;
+  }
+  
+  .user-bookings-header {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  .user-bookings-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .user-bookings-table th {
+    padding: 8px;
+    border: 1px solid gray;
+    background-color: lightgray;
+  }
+  
+  .user-bookings-table td {
+    padding: 8px;
+    border: 1px solid gray;
+  }
+  

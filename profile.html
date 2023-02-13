@@ -93,13 +93,48 @@
     <br/><br/><br/>
     <br/><br/><br/>
     <br/><br/><br/>
-    <h1>My khadus karala</h1>
-    <h1>Profile</h1>
-   
+    <div id="profile-page">
+        <div class="container">
+            <div class="user-info">
+              <h3 class="user-info-header">User Information</h3>
+              <table class="user-info-table">
+                <tr>
+                  <td>Name:</td>
+                  <td class="user-name" id="user-name"></td>
+                </tr>
+                <tr>
+                  <td>Email:</td>
+                  <td class="user-email" id="user-email"></td>
+                </tr>
+                <tr>
+                  <td>Contact:</td>
+                  <td class="user-contact" id="user-contact"></td>
+                </tr>
+              </table>
+            </div>
+            <div class="user-bookings">
+              <h3 class="user-bookings-header">User Bookings</h3>
+              <table class="user-bookings-table">
+                <tr>
+                  <th>Package Name</th>
+                  <th>Destination</th>
+                  <th>Price</th>
+                  <th>Status</th>
+                </tr>
+                <tr>
+                  <td class="package-name" id="package-name"></td>
+                  <td class="destination" id="destination"></td>
+                  <td class="price" id="price"></td>
+                  <td class="status" id="status"></td>
+                </tr>
+              </table>
+            </div>
+          </div>          
+    </div>
 
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 
-    <script src="./script.js"></script>
+    <script src="./profile.js"></script>
     
 </body>
 

@@ -1,6 +1,7 @@
 let users;
 let packages;
 let bookings;
+let logoutBtn = document.querySelector('#logout-btn');
 window.onload = function () {
     // your code here
     document.getElementById('logout-btn').style.visibility = 'hidden';
@@ -44,6 +45,17 @@ window.onload = function () {
     reloadPackage();
     reloadBookings();
 };
+
+logoutBtn.addEventListener('click', () => {
+    alert("logout")
+    localStorage.removeItem("user-cred")
+    document.getElementById('Register-btn').style.visibility = 'visible';
+    document.getElementById('login-btn').style.visibility = 'visible';
+    document.getElementById('logout-btn').style.visibility = 'hidden';
+    
+    window.location.href = "/#home"
+
+})
 
 function changeScreen(data) {
     if (data.id === "Users-btn") {
