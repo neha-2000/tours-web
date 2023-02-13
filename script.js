@@ -392,7 +392,7 @@ function getPackages() {
                         <div class="price">${order.price}  &#x20B9; 
                          </div>
                       
-                            <button href="#" class="btn" id="bookbutton" onClick="redirectBook(${order?.price})">book now</button> 
+                            <button href="#" class="btn" id="bookbutton" onClick="redirectBook('${order?.id}')">book now</button> 
             
                         </div>
                     </div>
@@ -413,8 +413,8 @@ function getPackages() {
 
 function redirectBook(orderId) {
     console.log(orderId)
-    // sessionStorage.setItem("orderID", id);
-    // window.location.href = "book.html";
+    sessionStorage.setItem("orderID", orderId);
+    window.location.href = "book.html";
 }
 
 // const bookbutton = document.querySelector("#bookbutton");
