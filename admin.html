@@ -72,7 +72,8 @@
 
     <br /><br /><br />
     <br /><br /><br />
-    <br /><br /><br /><br /><br /><br />
+    <br /><br /><br />
+    <br /><br /><br />
     <div class="admin-box">
       <button class="admin-btns" id="Users-btn" onclick="changeScreen(this)">
         Users
@@ -85,15 +86,20 @@
       </button>
     </div>
 
-    <div id="users-screen">
+    <div id="users-screen" class="screen">
       <form>
         <input
           type="text"
           id="myInput"
           onkeyup="searchUserFunction()"
           placeholder="Search for names.."
+          class="mysearch"
         />
-        <button type="button" style="background-color: orange">Search</button>
+        <button type="button"  style="background-color: rgba(255, 166, 0, 0.401); float: right ;padding: 10px;
+        border-radius: 10px;
+        cursor: pointer;
+        color: orange;"
+        >Search</button>
       </form>
 
       <table id="myUserTable">
@@ -104,23 +110,35 @@
         </tr>
       </table>
     </div>
-    <div id="packages-screen">
-      <button
-        type="button"
-        id="addPackageButton"
-        style="background-color: orange; float: right"
-      >
-        Add Package
-      </button>
+    <div id="packages-screen" class="screen">
+      
       <form>
         <input
           type="text"
           id="myPackageInput"
           onkeyup="searchPackageFunction()"
+          class="mysearch"
           placeholder="Search for names.."
         />
-        <button type="button" style="background-color: orange">Search</button>
+        <button type="button" 
+        style="background-color: rgba(255, 166, 0, 0.401); float: right ;padding: 10px;
+        border-radius: 10px;
+        cursor: pointer;
+        color: orange;"
+        
+       >Search</button>
+        <button
+        type="button"
+        id="addPackageButton"
+        style="background-color: orange; float: right ;padding: 10px;
+        border-radius: 10px;
+        cursor: pointer;
+        color: white;"
+      >
+        Add Package + 
+      </button>
       </form>
+     
 
       <table id="packageTable">
         <tr>
@@ -151,8 +169,8 @@
         </form>
       </div>
     </div>
-    <div id="bookings-screen">
-      <input type="text" class="searchBar" id="bookingSearchBar" onkeyup="searchBookingFunction()" placeholder="Search for names..">
+    <div id="bookings-screen" class="screen">
+      <input type="text"   class="mysearch"  id="bookingSearchBar" onkeyup="searchBookingFunction()" placeholder="Search for names..">
   
       <table class="bookingsTable" id="bookingsTable">
         <tr>
