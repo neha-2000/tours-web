@@ -1,59 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
     <title>Document</title>
 
     <!-- <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" /> -->
 
-    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper/swiper-bundle.min.css"
+    />
 
     <!-- font awesome cdn link -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
 
-    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="index.css" />
+  </head>
 
-
-
-</head>
-
-
-<body>
+  <body>
     <!-- Header -->
     <header>
+      <div id="menu-bar" class="fas fa-bars"></div>
 
-        <div id="menu-bar" class="fas fa-bars"></div>
+      <a href="#" class="logo"><span>T</span>ravel</a>
 
-        <a href="#" class="logo"><span>T</span>ravel</a>
+      <nav class="navbar">
+        <a href="/#home">home</a>
+        <a href="/#book">book</a>
+        <a href="/#packages">packages</a>
+        <a href="/#services">services</a>
+        <a href="/#gallery">gallery</a>
+        <a href="/#review">review</a>
+        <a href="/#contact">contact</a>
+      </nav>
 
-        <nav class="navbar">
-            <a href="/#home">home</a>
-            <a href="/#book">book</a>
-            <a href="/#packages">packages</a>
-            <a href="/#services">services</a>
-            <a href="/#gallery">gallery</a>
-            <a href="/#review">review</a>
-            <a href="/#contact">contact</a>
-        </nav>
+      <div class="icons">
+           
+        <i class="fas fa-search" id="search-btn"></i>            
+        <span id="login-btn"> SignIn</span>
+        <span id="Register-btn"> SignUp</span>
+        <a href="./admin.html"> <span id="admin-btn" class="material-symbols-outlined">
+            admin_panel_settings
+            </span></a>
+       
+            <a href="./profile.html"> <i class="fas fa-user" id="profile-btn"></i></a>
 
-        <div class="icons">
-            <!-- <i class="fas fa-search" id="search-btn"></i>            
-            <span id="login-btn"> SignIn</span>
-            <span id="Register-btn"> SignUp</span> -->
+        <span id="logout-btn"> Logout</span>
+      
+        <!-- <i class="fas fa-user" id="Register-btn"></i>  -->
+      
+    </div>
 
-            <i class="fas fa-user" id="login-btn"></i>
-            <span id="Logout-btn"> Logout</span> -->
-        </div>
-
-        <form action="" class="search-bar-container">
-            <input type="search" id="search-bar" placeholder="search here...">
-            <label for="search-bar" class="fas fa-search"></label>
-        </form>
+      <form action="" class="search-bar-container">
+        <input type="search" id="search-bar" placeholder="search here..." />
+        <label for="search-bar" class="fas fa-search"></label>
+      </form>
     </header>
     <!-- End -->
     <br /><br /><br />
@@ -63,61 +73,115 @@
 
     <!-- book section starts -->
 
-
-
     <section class="book" id="book">
-        <h1 class="heading">
-            <span>b</span>
-            <span>o</span>
-            <span>o</span>
-            <span>k</span>
-            <span class="space"></span>
-            <span>n</span>
-            <span>o</span>
-            <span>w</span>
-        </h1>
+      <h1 class="heading">
+        <span>b</span>
+        <span>o</span>
+        <span>o</span>
+        <span>k</span>
+        <span class="space"></span>
+        <span>n</span>
+        <span>o</span>
+        <span>w</span>
+      </h1>
 
-        <div class="row">
-            <div class="image">
-                <img src="images/book-img.svg" alt="">
-            </div>
-
-            <form action="">
-                <div class="inputBox">
-                    <h3>where to</h3>
-                    <input type="text" placeholder="place name">
-                </div>
-                <div class="inputBox">
-                    <h3>how many</h3>
-                    <input type="number" placeholder="number of guests">
-                </div>
-                <div class="inputBox">
-                    <h3>arrivals</h3>
-                    <input type="date">
-                </div>
-                <div class="inputBox">
-                    <h3>leaving</h3>
-                    <input type="date">
-                </div>
-                <input type="submit" class="btn" value="book now">
-            </form>
+      <div class="row">
+        <div class="image">
+          <img src="images/book-img.svg" alt="" />
         </div>
+
+        <form action="">
+          <div class="inputBox">
+            <h3>Package</h3>
+            <input type="text" id="package" readonly/>
+          </div>
+          <div class="inputBox">
+            <h3>Destination</h3>
+            <input type="text" id="destination" readonly/>
+          </div>
+          <div class="inputBox">
+            <h3>Price</h3>
+            <input type="number" id="price" readonly/>
+          </div>
+          <div class="inputBox">
+            <h3>Duration</h3>
+            <input type="text" id="duration" readonly/>
+          </div>
+          <input type="submit" class="btn" value="book now" onclick="bookBookings()"/>
+        </form>
+      </div>
     </section>
     <!-- book section ends -->
 
-
-
-
     <script>
-        const orderID = sessionStorage.getItem("orderID");
+      const orderID = sessionStorage.getItem("orderID");
+      const user = JSON.parse(localStorage.getItem("user-cred"));
+      const b = JSON.stringify({
+          packageId: {
+            id: `${orderID}`,
+          },
+          userId: {
+            id: `${user.id}`,
+          },
+          bookingDate: new Date().toISOString().substring(0, 10),
+          status: "Confirm",
+        })
 
-        const displayElement = document.querySelector('#display-element');
-        displayElement.innerHTML = `Order ID: ${orderID}`;
+        fetch(`http://localhost:8080/api/packages/${orderID}`, {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+        }
+      })
+        .then((response) => {
+            if (response.ok) {
+                return response.json();
+            } else {
+                throw new Error("Request failed with status code: " + response.status);
+            }
+        })
+        .then((data) => {
+            
+            document.getElementById('package').value = data.packageName
+            document.getElementById('destination').value = data.destination
+            document.getElementById('price').value = data.price
+            document.getElementById('duration').value = data.duration
+          console.log(data);
+        })
+        .catch((error) => {
+          console.error(error);
+        });
+
+
+      function bookBookings(){
+        fetch("http://localhost:8080/api/bookings", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: b
+      })
+        .then((response) => {
+            if (response.ok) {
+                return response.json();
+            } else {
+                throw new Error("Request failed with status code: " + response.status);
+            }
+        })
+        .then((data) => {
+          alert("Booking Success");
+          window.location.href = "/profile.html"
+        })
+        .catch((error) => {
+          console.error(error);
+        });
+      }
+      const displayElement = document.querySelector("#display-element");
+      displayElement.innerHTML = `Order ID: ${orderID}`;
     </script>
 
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 
     <script src="script.js"></script>
-</body>
-
+  </body>
 </html>
