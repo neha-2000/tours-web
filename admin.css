@@ -1,0 +1,87 @@
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td,
+th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+
+form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+input[type=text] {
+    padding: 10px;
+    margin: 5px 0;
+    box-sizing: border-box;
+    border: 2px solid orange;
+    border-radius: 10px;
+    width: 60%;
+}
+
+button[type=button] {
+    padding: 10px 20px;
+    margin: 5px 0;
+    background-color: orange;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.form-packages {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+input[type="text"] {
+    padding: 10px;
+    margin: 5px 0;
+    box-sizing: border-box;
+    border: 2px solid orange;
+    border-radius: 10px;
+    width: 60%;
+}
+
+
+.bookingsTable {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.tableCell,
+.tableHeader {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+.tableRow:nth-child(even) {
+    background-color: #dddddd;
+}
+
+.tableHeader {
+    cursor: pointer;
+    background-color: #ffa07a;
+}
+
+.searchBar {
+    width: 100%;
+    font-size: 18px;
+    padding: 12px 20px 12px 40px;
+    border: 1px solid #dddddd;
+    margin-bottom: 12px;
+}

@@ -1,77 +1,172 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
 
     <!-- <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" /> -->
 
-    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" /> 
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper/swiper-bundle.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
 
     <!-- font awesome cdn link -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
 
-    <link rel="stylesheet" href="index.css">
-</head>
+    <link rel="stylesheet" href="index.css" />
+  </head>
 
-<body>
-     <!-- Header -->
-     <header>
+  <body>
+    <!-- Header -->
+    <header>
+      <div id="menu-bar" class="fas fa-bars"></div>
 
-        <div id="menu-bar" class="fas fa-bars"></div>
+      <a href="#" class="logo"><span>T</span>ravel</a>
 
-        <a href="#" class="logo"><span>T</span>ravel</a>
+      <nav class="navbar">
+        <a href="/#home">home</a>
+        <a href="/#book">book</a>
+        <a href="/#packages">packages</a>
+        <a href="/#services">services</a>
+        <a href="/#gallery">gallery</a>
+        <a href="/#review">review</a>
+        <a href="/#contact">contact</a>
+      </nav>
 
-        <nav class="navbar">
-            <a href="/#home">home</a>
-            <a href="/#book">book</a>
-            <a href="/#packages">packages</a>
-            <a href="/#services">services</a>
-            <a href="/#gallery">gallery</a>
-            <a href="/#review">review</a>
-            <a href="/#contact">contact</a>
-        </nav>
+      <div class="icons">
+        <i class="fas fa-search" id="search-btn"></i>
+        <span id="login-btn"> SignIn</span>
+        <span id="Register-btn"> SignUp</span>
+        <a href="./admin.html">
+          <span id="admin-btn" class="material-symbols-outlined">
+            admin_panel_settings
+          </span></a
+        >
 
-        <div class="icons">
-           
-            <i class="fas fa-search" id="search-btn"></i>            
-            <span id="login-btn"> SignIn</span>
-            <span id="Register-btn"> SignUp</span>
-            <a href="./admin.html"> <span id="admin-btn" class="material-symbols-outlined">
-                admin_panel_settings
-                </span></a>
-           
-                <a href="./profile.html"> <i class="fas fa-user" id="profile-btn"></i></a>
+        <a href="./profile.html">
+          <i class="fas fa-user" id="profile-btn"></i
+        ></a>
 
-            <span id="logout-btn"> Logout</span>
-          
-            <!-- <i class="fas fa-user" id="Register-btn"></i>  -->
-          
-        </div>
+        <span id="logout-btn"> Logout</span>
 
-        <form action="" class="search-bar-container">
-            <input type="search" id="search-bar" placeholder="search here...">
-            <label for="search-bar" class="fas fa-search"></label>
-        </form>
-       </header> 
-       <!-- header
+        <!-- <i class="fas fa-user" id="Register-btn"></i>  -->
+      </div>
+
+      <form action="" class="search-bar-container">
+        <input type="search" id="search-bar" placeholder="search here..." />
+        <label for="search-bar" class="fas fa-search"></label>
+      </form>
+    </header>
+    <!-- header -->
     <!-- End -->
-    <br/><br/><br/>
-    <br/><br/><br/>
-    <br/><br/><br/><br/><br/><br/>
+
+    <br /><br /><br />
+    <br /><br /><br />
+    <br /><br /><br /><br /><br /><br />
     <div class="admin-box">
-        <button class="admin-btns" id="Users-btn">Users</button>
-        <button class="admin-btns" id="packages-btn">Packages</button>
-        <button class="admin-btns" id="bookings-btn">Bookings</button>
+      <button class="admin-btns" id="Users-btn" onclick="changeScreen(this)">
+        Users
+      </button>
+      <button class="admin-btns" id="packages-btn" onclick="changeScreen(this)">
+        Packages
+      </button>
+      <button class="admin-btns" id="bookings-btn" onclick="changeScreen(this)">
+        Bookings
+      </button>
+    </div>
+
+    <div id="users-screen">
+      <form>
+        <input
+          type="text"
+          id="myInput"
+          onkeyup="searchUserFunction()"
+          placeholder="Search for names.."
+        />
+        <button type="button" style="background-color: orange">Search</button>
+      </form>
+
+      <table id="myUserTable">
+        <tr>
+          <th onclick="sortUserTable(0)">Name</th>
+          <th onclick="sortUserTable(1)">Email</th>
+          <th onclick="sortUserTable(2)">Contact</th>
+        </tr>
+      </table>
+    </div>
+    <div id="packages-screen">
+      <button
+        type="button"
+        id="addPackageButton"
+        style="background-color: orange; float: right"
+      >
+        Add Package
+      </button>
+      <form>
+        <input
+          type="text"
+          id="myPackageInput"
+          onkeyup="searchPackageFunction()"
+          placeholder="Search for names.."
+        />
+        <button type="button" style="background-color: orange">Search</button>
+      </form>
+
+      <table id="packageTable">
+        <tr>
+          <th onclick="sortPackageTable(0)">Package Name</th>
+          <th onclick="sortPackageTable(1)">Destination</th>
+          <th onclick="sortPackageTable(2)">Duration</th>
+          <th onclick="sortPackageTable(3)">Price</th>
+          <th onclick="sortPackageTable(4)">Description</th>
+          <th onclick="sortPackageTable(5)">Image</th>
+        </tr>
+      </table>
+
+      <div id="addPackageForm" style="display: none">
+        <form class="form-packages">
+          <input type="text" id="packageName" placeholder="Package Name" />
+          <input type="text" id="destination" placeholder="Destination" />
+          <input type="text" id="duration" placeholder="Duration" />
+          <input type="text" id="price" placeholder="Price" />
+          <input type="text" id="description" placeholder="Description" />
+          <input type="text" id="image" placeholder="Image URL" />
+          <button
+            type="button"
+            id="submitPackageButton"
+            style="background-color: orange"
+          >
+            Submit
+          </button>
+        </form>
+      </div>
+    </div>
+    <div id="bookings-screen">
+      <input type="text" class="searchBar" id="bookingSearchBar" onkeyup="searchBookingFunction()" placeholder="Search for names..">
+  
+      <table class="bookingsTable" id="bookingsTable">
+        <tr>
+          <th class="tableHeader" onclick="sortBookingTable(0)">Name</th>
+          <th class="tableHeader" onclick="sortBookingTable(1)">Package Name</th>
+          <th class="tableHeader" onclick="sortBookingTable(2)">Email</th>
+          <th class="tableHeader" onclick="sortBookingTable(3)">Contact</th>
+          <th class="tableHeader" onclick="sortBookingTable(4)">Booking Date</th>
+          <th class="tableHeader" onclick="sortBookingTable(5)">Status</th>
+        </tr>
+      </table>
     </div>
     
-
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-
-    <script src="./script.js"></script>
-</body>
-
+    <script src="./admin.js"></script>
+  </body>
 </html>
