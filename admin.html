@@ -86,91 +86,11 @@
       </button>
     </div>
 
-    <div id="users-screen" class="screen">
-      <form>
-        <input
-          type="text"
-          id="myInput"
-          onkeyup="searchUserFunction()"
-          placeholder="Search for names.."
-          class="mysearch"
-        />
-        <button type="button"  style="background-color: rgba(255, 166, 0, 0.401); float: right ;padding: 10px;
-        border-radius: 10px;
-        cursor: pointer;
-        color: orange;"
-        >Search</button>
-      </form>
-
-      <table id="myUserTable">
-        <tr>
-          <th onclick="sortUserTable(0)">Name</th>
-          <th onclick="sortUserTable(1)">Email</th>
-          <th onclick="sortUserTable(2)">Contact</th>
-        </tr>
-      </table>
-    </div>
-    <div id="packages-screen" class="screen">
-      
-      <form>
-        <input
-          type="text"
-          id="myPackageInput"
-          onkeyup="searchPackageFunction()"
-          class="mysearch"
-          placeholder="Search for names.."
-        />
-        <button type="button" 
-        style="background-color: rgba(255, 166, 0, 0.401); float: right ;padding: 10px;
-        border-radius: 10px;
-        cursor: pointer;
-        color: orange;"
-        
-       >Search</button>
-        <button
-        type="button"
-        id="addPackageButton"
-        style="background-color: orange; float: right ;padding: 10px;
-        border-radius: 10px;
-        cursor: pointer;
-        color: white;"
-      >
-        Add Package + 
-      </button>
-      </form>
-     
-
-      <table id="packageTable">
-        <tr>
-          <th onclick="sortPackageTable(0)">Package Name</th>
-          <th onclick="sortPackageTable(1)">Destination</th>
-          <th onclick="sortPackageTable(2)">Duration</th>
-          <th onclick="sortPackageTable(3)">Price</th>
-          <th onclick="sortPackageTable(4)">Description</th>
-          <th onclick="sortPackageTable(5)">Image</th>
-        </tr>
-      </table>
-
-      <div id="addPackageForm" style="display: none">
-        <form class="form-packages">
-          <input type="text" id="packageName" placeholder="Package Name" />
-          <input type="text" id="destination" placeholder="Destination" />
-          <input type="text" id="duration" placeholder="Duration" />
-          <input type="text" id="price" placeholder="Price" />
-          <input type="text" id="description" placeholder="Description" />
-          <input type="text" id="image" placeholder="Image URL" />
-          <button
-            type="button"
-            id="submitPackageButton"
-            style="background-color: orange"
-          >
-            Submit
-          </button>
-        </form>
-      </div>
+    <div id="users-screen" class="screen"></div>
+    <div id="packages-screen" class="screen"></div>
     </div>
     <div id="bookings-screen" class="screen">
-      <input type="text"   class="mysearch"  id="bookingSearchBar" onkeyup="searchBookingFunction()" placeholder="Search for names..">
+      <!-- <input type="text"   class="mysearch"  id="bookingSearchBar" onkeyup="searchBookingFunction()" placeholder="Search for names..">
   
       <table class="bookingsTable" id="bookingsTable">
         <tr>
@@ -182,7 +102,7 @@
           <th class="tableHeader" onclick="sortBookingTable(5)">Status</th>
         </tr>
       </table>
-    </div>
+    </div> -->
     
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script src="./admin.js"></script>

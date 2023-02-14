@@ -24,7 +24,6 @@ let isSingin = false;
 let isAdmin = false;
 
 
-
 window.onscroll = () => {
     searchBtn.classList.remove('fa-times');
     searchBar.classList.remove('active');
@@ -240,50 +239,9 @@ loginsubmitForm.addEventListener("submit", function (event) {
                 document.getElementById('admin-btn').style.visibility = 'hidden';
 
             }
-
-
-            console.log(data, isSingin, isAdmin);
         });
-
-    // then(response => {
-    //     if (!response.ok || response.status === 500) {
-    //         alert("something went wrong")
-    //         throw new Error(response.statusText);
-
-    //     }else{
-    //         loginForm.classList.remove('active');
-
-    //         return response.json();
-    //     }
-
-    // })
-
-    // fetch("http://localhost:8080/api/login", requestOptions)
-    // .then(resp => {
-    //     console.log("resp",resp, resp.response , resp.Response)
-    //     if (!resp.ok) {
-    //         alert("Something went wrong")
-    //     }
-    //     else {
-
-    //         // registerForm.classList.remove('active');
-    //         alert("successfully login")
-    //         localStorage.setItem("user-cred", JSON.stringify(resp.response))
-    //     }
-
-    // })
-    // .then(result => {
-    //     console.log("resp",result, result)
-    //     registerForm.classList.remove('active');
-    // })
-    // .catch(error => console.log('error', error));
-    // alert("loginen")
-    // registerionForm.submit();
-
 })
 
-
-// ----end---
 
 videoBtn.forEach(btn => {
     btn.addEventListener('click', () => {
@@ -338,13 +296,6 @@ var swiper = new Swiper(".brand-slider", {
 });
 
 
-
-
-
-
-
-
-
 // Select the element where you want to render the orders
 // const ordersElement = document.querySelector("#orders");
 const ordersElement = document.getElementById("orders");
@@ -370,9 +321,9 @@ function getPackages() {
             order = data
             console.log(order)
 
-            data.forEach(element => {
-                console.log(element)
-            });
+            
+            user = JSON.parse(localStorage.getItem('user-cred'));
+            let isDisable = user ? false : true
             for (const order of data) {
                 // Create a new element for each order
                 const orderElement = document.createElement("div");
@@ -392,7 +343,7 @@ function getPackages() {
                         <div class="price">${order.price}  &#x20B9; 
                          </div>
                       
-                            <button href="#" class="btn" id="bookbutton" onClick="redirectBook('${order?.id}')">book now</button> 
+                            <button href="#" class="btn" onClick="redirectBook('${order?.id}')">book now</button> 
             
                         </div>
                     </div>
@@ -412,24 +363,12 @@ function getPackages() {
 
 
 function redirectBook(orderId) {
-    console.log(orderId)
-    sessionStorage.setItem("orderID", orderId);
-    window.location.href = "book.html";
+    const user = JSON.parse(localStorage.getItem('user-cred'));
+    if (user) {
+        sessionStorage.setItem("orderID", orderId);
+        window.location.href = "book.html";
+    }
 }
-
-// const bookbutton = document.querySelector("#bookbutton");
-// bookbutton.addEventListener("click", function () {
-//     // Get the order ID
-//     const orderID = "12345";
-
-//     // Store the order ID in the session storage
-//     sessionStorage.setItem("orderID", orderID);
-
-//     // Redirect to the next page
-//     window.location.href = "book.html";
-// });
-
-
 
 window.onload = function () {
     // your code here

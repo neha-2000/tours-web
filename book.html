@@ -44,21 +44,23 @@
       </nav>
 
       <div class="icons">
-           
-        <i class="fas fa-search" id="search-btn"></i>            
+        <i class="fas fa-search" id="search-btn"></i>
         <span id="login-btn"> SignIn</span>
         <span id="Register-btn"> SignUp</span>
-        <a href="./admin.html"> <span id="admin-btn" class="material-symbols-outlined">
+        <a href="./admin.html">
+          <span id="admin-btn" class="material-symbols-outlined">
             admin_panel_settings
-            </span></a>
-       
-            <a href="./profile.html"> <i class="fas fa-user" id="profile-btn"></i></a>
+          </span></a
+        >
+
+        <a href="./profile.html">
+          <i class="fas fa-user" id="profile-btn"></i
+        ></a>
 
         <span id="logout-btn"> Logout</span>
-      
+
         <!-- <i class="fas fa-user" id="Register-btn"></i>  -->
-      
-    </div>
+      </div>
 
       <form action="" class="search-bar-container">
         <input type="search" id="search-bar" placeholder="search here..." />
@@ -93,21 +95,27 @@
         <form action="">
           <div class="inputBox">
             <h3>Package</h3>
-            <input type="text" id="package" readonly/>
+            <input type="text" id="package" readonly />
           </div>
           <div class="inputBox">
             <h3>Destination</h3>
-            <input type="text" id="destination" readonly/>
+            <input type="text" id="destination" readonly />
           </div>
           <div class="inputBox">
             <h3>Price</h3>
-            <input type="number" id="price" readonly/>
+            <input type="number" id="price" readonly />
           </div>
           <div class="inputBox">
             <h3>Duration</h3>
-            <input type="text" id="duration" readonly/>
+            <input type="text" id="duration" readonly />
           </div>
-          <input type="submit" class="btn" value="book now" onclick="bookBookings()"/>
+          <input
+            type="submit"
+            class="btn"
+            value="book now"
+            onclick="bookBookings()"
+            id="book-now-btn"
+          />
         </form>
       </div>
     </section>
@@ -116,65 +124,68 @@
     <script>
       const orderID = sessionStorage.getItem("orderID");
       const user = JSON.parse(localStorage.getItem("user-cred"));
+      console.log(user);
       const b = JSON.stringify({
-          packageId: {
-            id: `${orderID}`,
-          },
-          userId: {
-            id: `${user.id}`,
-          },
-          bookingDate: new Date().toISOString().substring(0, 10),
-          status: "Confirm",
-        })
+        packageId: {
+          id: `${orderID}`,
+        },
+        userId: {
+          id: `${user.id}`,
+        },
+        bookingDate: new Date().toISOString().substring(0, 10),
+        status: "Confirm",
+      });
 
-        fetch(`http://localhost:8080/api/packages/${orderID}`, {
+      fetch(`http://localhost:8080/api/packages/${orderID}`, {
         method: "GET",
         headers: {
           "Content-Type": "application/json",
-        }
+        },
       })
         .then((response) => {
-            if (response.ok) {
-                return response.json();
-            } else {
-                throw new Error("Request failed with status code: " + response.status);
-            }
+          if (response.ok) {
+            return response.json();
+          } else {
+            throw new Error(
+              "Request failed with status code: " + response.status
+            );
+          }
         })
         .then((data) => {
-            
-            document.getElementById('package').value = data.packageName
-            document.getElementById('destination').value = data.destination
-            document.getElementById('price').value = data.price
-            document.getElementById('duration').value = data.duration
+          document.getElementById("package").value = data.packageName;
+          document.getElementById("destination").value = data.destination;
+          document.getElementById("price").value = data.price;
+          document.getElementById("duration").value = data.duration;
           console.log(data);
         })
         .catch((error) => {
           console.error(error);
         });
 
-
-      function bookBookings(){
+      function bookBookings() {
         fetch("http://localhost:8080/api/bookings", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: b
-      })
-        .then((response) => {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: b,
+        })
+          .then((response) => {
             if (response.ok) {
-                return response.json();
+              return response.json();
             } else {
-                throw new Error("Request failed with status code: " + response.status);
+              throw new Error(
+                "Request failed with status code: " + response.status
+              );
             }
-        })
-        .then((data) => {
-          alert("Booking Success");
-          window.location.href = "/profile.html"
-        })
-        .catch((error) => {
-          console.error(error);
-        });
+          })
+          .then((data) => {
+            alert("Booking Success");
+            window.location.href = "/profile.html";
+          })
+          .catch((error) => {
+            console.error(error);
+          });
       }
       const displayElement = document.querySelector("#display-element");
       displayElement.innerHTML = `Order ID: ${orderID}`;
@@ -182,6 +193,6 @@
 
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 
-    <script src="script.js"></script>
+    <!-- <script src="script.js"></script> -->
   </body>
 </html>
