@@ -1,6 +1,7 @@
 let users;
 let packages;
 let bookings;
+var packageImage
 let logoutBtn = document.querySelector('#logout-btn');
 window.onload = function () {
     // your code here
@@ -244,7 +245,7 @@ function setPackagesTable(data) {
     <input type="text" id="duration" placeholder="Duration" />
     <input type="text" id="price" placeholder="Price" />
     <input type="text" id="description" placeholder="Description" />
-    <input type="text" id="image" placeholder="Image URL" />
+    <input type="file" id="image" accept="image/*" placeholder="Image URL" onchange="()">
     <button type="button" id="submitPackageButton" style="background-color: orange">Submit</button>
     </form>`
 
@@ -256,7 +257,33 @@ function setPackagesTable(data) {
     addPackageEvent();
     submitPackageButton();
     console.log("Running Set Pack");
+    const fileInput = document.querySelector('input[type="file"]');
+    fileInput.addEventListener('change', async (event) => {
+        const file = event.target.files[0];
+        const base64Url = await convertImageToBase64(file);
+        packageImage = base64Url;
+    });
 }
+
+function convertImageToBase64(file) {
+    return new Promise((resolve, reject) => {
+      if (!file) {
+        reject("No file selected");
+      }
+  
+      const reader = new FileReader();
+  
+      reader.onload = () => {
+        resolve(reader.result);
+      };
+  
+      reader.onerror = (error) => {
+        reject(error);
+      };
+  
+      reader.readAsDataURL(file);
+    });
+  }
 
 function searchUserFunction() {
     let input, filter, table, tr, td, i, txtValue;
@@ -420,7 +447,7 @@ function submitPackageButton() {
             let duration = document.getElementById("duration").value;
             let price = document.getElementById("price").value;
             let description = document.getElementById("description").value;
-            let image = document.getElementById("image").value;
+            let image = packageImage;
 
             const data = {
                 "packageName": packageName,
