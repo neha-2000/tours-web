@@ -867,8 +867,8 @@ form{
     border-radius: 0.5rem;
     background: #fff;
     width: 50rem;
-    display: flex;
-    justify-content: space-around;
+    /* display: flex;
+    justify-content: space-around; */
 
 }
 
