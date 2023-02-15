@@ -47,7 +47,9 @@ function changeScreen(data) {
             const element = document.getElementById('bookingDiv');
             element.remove();
         }
-        reloadUser();
+        if (!document.getElementById("userScreenDiv")) {
+            reloadUser();
+        }
     }
     if (data.id === "packages-btn") {
         screen = "PACKAGES";
@@ -60,7 +62,9 @@ function changeScreen(data) {
             element.remove();
         }
         console.log("Running Change Screen Pack");
-        reloadPackage();
+        if (!document.getElementById("packageDiv")) {
+            reloadPackage();
+        }
     }
     if (data.id === "bookings-btn") {
         screen = "BOOKINGS";
@@ -72,7 +76,9 @@ function changeScreen(data) {
             const element = document.getElementById('packageDiv');
             element.remove();
         }
-        reloadBookings();
+        if (!document.getElementById("bookingDiv")) {
+            reloadBookings();
+        }
     };
 }
 
@@ -179,7 +185,7 @@ function setUserTable(data) {
 }
 
 function setPackagesTable(data) {
-    
+
     let packageDiv = document.createElement('div');
     packageDiv.id = "packageDiv";
     let packageForm = document.createElement('form');
@@ -189,9 +195,9 @@ function setPackagesTable(data) {
   border-radius: 10px; cursor: pointer; color: orange;">Search</button>
   <button type="button" id="addPackageButton" style="background-color: orange; float: right ;padding: 10px;
   border-radius: 10px; cursor: pointer; color: white;">Add Package + </button>`
-  let table = document.createElement('table');
-  table.id="packageTable";
-  table.innerHTML = `<tr>
+    let table = document.createElement('table');
+    table.id = "packageTable";
+    table.innerHTML = `<tr>
   <th onclick="sortPackageTable(0)">Package Name</th>
   <th onclick="sortPackageTable(1)">Destination</th>
   <th onclick="sortPackageTable(2)">Duration</th>
@@ -199,7 +205,7 @@ function setPackagesTable(data) {
   <th onclick="sortPackageTable(4)">Description</th>
   <th onclick="sortPackageTable(5)">Image</th>
 </tr>`
-  for (let i = 0; i < data.length; i++) {
+    for (let i = 0; i < data.length; i++) {
         let row = document.createElement('tr');
         let packageNameCell = document.createElement('td');
         let destinationCell = document.createElement('td');
@@ -220,20 +226,20 @@ function setPackagesTable(data) {
         width="100"
         height="100"
       />`;
-      
-      row.appendChild(packageNameCell);
-      row.appendChild(destinationCell);
-      row.appendChild(durationCell);
-      row.appendChild(priceCell);
+
+        row.appendChild(packageNameCell);
+        row.appendChild(destinationCell);
+        row.appendChild(durationCell);
+        row.appendChild(priceCell);
         row.appendChild(descriptionCell);
         row.appendChild(imageCell);
         row.appendChild(buttonsCell);
-        
+
         table.appendChild(row);
     }
     let addPackageForm = document.createElement('div');
     addPackageForm.id = "addPackageForm";
-    
+
     addPackageForm.innerHTML = ` <form class="form-packages">
     <input type="text" id="packageName" placeholder="Package Name" />
     <input type="text" id="destination" placeholder="Destination" />
@@ -243,7 +249,7 @@ function setPackagesTable(data) {
     <input type="text" id="image" placeholder="Image URL" />
     <button type="button" id="submitPackageButton" style="background-color: orange">Submit</button>
     </form>`
-    
+
     let packScreen = document.getElementById("packages-screen");
     packageDiv.append(packageForm);
     packageDiv.append(table);
@@ -399,7 +405,7 @@ function sortPackageTable(n) {
     }
 }
 
-function addPackageEvent(){
+function addPackageEvent() {
     document
         .getElementById("addPackageButton")
         .addEventListener("click", function () {
@@ -417,7 +423,7 @@ function submitPackageButton() {
             let price = document.getElementById("price").value;
             let description = document.getElementById("description").value;
             let image = document.getElementById("image").value;
-    
+
             const data = {
                 "packageName": packageName,
                 "destination": destination,
@@ -426,7 +432,7 @@ function submitPackageButton() {
                 "description": description,
                 "image": image
             };
-    
+
             const options = {
                 method: 'POST',
                 headers: {
@@ -434,7 +440,7 @@ function submitPackageButton() {
                 },
                 body: JSON.stringify(data)
             };
-    
+
             fetch('http://localhost:8080/api/packages', options)
                 .then(res => {
                     if (res.ok) {
@@ -452,7 +458,7 @@ function submitPackageButton() {
                     let priceCell = row.insertCell(3);
                     let descriptionCell = row.insertCell(4);
                     let imageCell = row.insertCell(5);
-    
+
                     packageNameCell.innerHTML = packageName;
                     destinationCell.innerHTML = destination;
                     durationCell.innerHTML = duration;
@@ -460,12 +466,12 @@ function submitPackageButton() {
                     descriptionCell.innerHTML = description;
                     imageCell.innerHTML = `<img src="${image}" alt="${packageName}" width="100" height="100">`;
                     document.getElementById("addForm").style.display = "none";
-    
+
                 })
                 .catch(error => console.error(error));
-    
-    
-    
+
+
+
         });
 }
 
@@ -572,33 +578,33 @@ function setBookingsTable(data) {
     let tablehead6 = document.createElement('th');
 
     tablehead1.classList.add("tableHeader");
-    tablehead1.onclick = function() { sortBookingTable(0) };
+    tablehead1.onclick = function () { sortBookingTable(0) };
     tablehead1.innerHTML = "Name"
     tableRow.append(tablehead1);
-    
-    
+
+
     tablehead2.classList.add("tableHeader");
-    tablehead2.onclick = function() { sortBookingTable(1) };
+    tablehead2.onclick = function () { sortBookingTable(1) };
     tablehead2.innerHTML = "Package Name"
     tableRow.append(tablehead2);
 
     tablehead3.classList.add("tableHeader");
-    tablehead3.onclick = function() { sortBookingTable(2) };
+    tablehead3.onclick = function () { sortBookingTable(2) };
     tablehead3.innerHTML = "Email"
     tableRow.append(tablehead3);
-    
+
     tablehead4.classList.add("tableHeader");
-    tablehead4.onclick = function() { sortBookingTable(3) };
+    tablehead4.onclick = function () { sortBookingTable(3) };
     tablehead4.innerHTML = "Contact"
     tableRow.append(tablehead4);
-    
+
     tablehead5.classList.add("tableHeader");
-    tablehead5.onclick = function() { sortBookingTable(4) };
+    tablehead5.onclick = function () { sortBookingTable(4) };
     tablehead5.innerHTML = "Booking Date"
     tableRow.append(tablehead5);
-    
+
     tablehead6.classList.add("tableHeader");
-    tablehead6.onclick = function() { sortBookingTable(5) };
+    tablehead6.onclick = function () { sortBookingTable(5) };
     tablehead6.innerHTML = "Status"
     tableRow.append(tablehead6);
 
@@ -611,7 +617,7 @@ function setBookingsTable(data) {
         let contactBookingCell = document.createElement('td');
         let bookingDateCell = document.createElement('td');
         let statusBookingCell = document.createElement('td');
-        
+
         namebookingCell.innerHTML = data[i].userId.name;
         bookingsPackageNameCell.innerHTML = data[i].packageId.packageName;
         emailbookingCell.innerHTML = data[i].userId.email;
@@ -625,7 +631,7 @@ function setBookingsTable(data) {
         row.appendChild(contactBookingCell);
         row.appendChild(bookingDateCell);
         row.appendChild(statusBookingCell);
-        
+
         table.appendChild(row);
     }
     let bookingScreen = document.getElementById('bookings-screen');
@@ -653,6 +659,7 @@ function setBookingsTable(data) {
 //                 }
 //             })
 //             .then(data => {
+
 //                 reloadPackage();
 //             })
 //             .catch(error => console.error(error));
