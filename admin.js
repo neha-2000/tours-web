@@ -149,10 +149,8 @@ function setUserTable(data) {
     placeholder="Search for names.."
     class="mysearch"
   />
-  <button type="button"  style="background-color: rgba(255, 166, 0, 0.401); float: right ;padding: 10px;
-  border-radius: 10px;
-  cursor: pointer;
-  color: orange;"
+  <button type="button" class="searchbtn"
+   
   >Search</button>`
     let table = document.createElement('table');
     table.id = "myUserTable";
