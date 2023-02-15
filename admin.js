@@ -267,23 +267,23 @@ function setPackagesTable(data) {
 
 function convertImageToBase64(file) {
     return new Promise((resolve, reject) => {
-      if (!file) {
-        reject("No file selected");
-      }
-  
-      const reader = new FileReader();
-  
-      reader.onload = () => {
-        resolve(reader.result);
-      };
-  
-      reader.onerror = (error) => {
-        reject(error);
-      };
-  
-      reader.readAsDataURL(file);
+        if (!file) {
+            reject("No file selected");
+        }
+
+        const reader = new FileReader();
+
+        reader.onload = () => {
+            resolve(reader.result);
+        };
+
+        reader.onerror = (error) => {
+            reject(error);
+        };
+
+        reader.readAsDataURL(file);
     });
-  }
+}
 
 function searchUserFunction() {
     let input, filter, table, tr, td, i, txtValue;
@@ -591,6 +591,9 @@ function setBookingsTable(data) {
     bookingInp.classList.add('mysearch');
     bookingInp.id = "bookingSearchBar";
     bookingInp.onkeyup = searchBookingFunction;
+    let searchBtn = document.createElement('button');
+    searchBtn.classList.add('searchbtn');
+    searchBtn.innerHTML = "Search";
     let table = document.createElement('table');
     table.classList.add("bookingsTable");
     table.id = "bookingsTable"
@@ -661,6 +664,7 @@ function setBookingsTable(data) {
     }
     let bookingScreen = document.getElementById('bookings-screen');
     bookingDiv.append(bookingInp);
+    bookingDiv.append(searchBtn);
     bookingDiv.append(table);
     bookingScreen.append(bookingDiv);
 }
