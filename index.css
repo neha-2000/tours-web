@@ -908,17 +908,6 @@ form{
   margin-top: 10px;
 }
 
-#bookingDiv .mysearch{
- 
-  width: 28%;
-  border-radius: 10px;
-  height: 35px;
-  background: #0000002e;
-  border-radius: 5px;
-  color: black;
-  padding: 20px;
-
-}
 .searchbox{
   display: flex;
   width: 200px;
