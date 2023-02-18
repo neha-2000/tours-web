@@ -240,12 +240,19 @@ function setPackagesTable(data) {
     addPackageForm.id = "addPackageForm";
 
     addPackageForm.innerHTML = ` <form class="form-packages">
+    <h3>Package Name</h3> 
     <input type="text" id="packageName" placeholder="Package Name" />
+    <h3>Destination</h3>
     <input type="text" id="destination" placeholder="Destination" />
+    <h3>Duration</h3>
     <input type="text" id="duration" placeholder="Duration" />
+    <h3>Price</h3>
     <input type="text" id="price" placeholder="Price" />
+    <h3>Description</h3>
     <input type="text" id="description" placeholder="Description" />
+    <h3>Image </h3>
     <input type="file" id="image" accept="image/*" placeholder="Image URL" onchange="()">
+
     <button type="button" id="submitPackageButton" style="background-color: orange">Submit</button>
     </form>`
 
