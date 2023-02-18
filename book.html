@@ -122,6 +122,32 @@
     <!-- book section ends -->
 
     <script>
+
+window.onload = function () {
+    // your code here
+    document.getElementById('logout-btn').style.visibility = 'hidden';
+    document.getElementById('profile-btn').style.visibility = 'hidden';
+    document.getElementById('admin-btn').style.visibility = 'hidden';
+
+    if (localStorage.getItem("user-cred") !== null || undefined) {
+        document.getElementById('Register-btn').style.visibility = 'hidden';
+        document.getElementById('login-btn').style.visibility = 'hidden';
+
+        console.log(localStorage.getItem("user-cred"))
+        let userCred = JSON.parse(localStorage.getItem("user-cred"));
+        if (userCred.role == "Admin") {
+            document.getElementById('admin-btn').style.visibility = 'visible';
+        }
+
+        document.getElementById('logout-btn').style.visibility = 'visible';
+        document.getElementById('profile-btn').style.visibility = 'visible';
+    }
+
+    user = JSON.parse(localStorage.getItem("user-cred"));
+   
+
+    
+};
       const orderID = sessionStorage.getItem("orderID");
       const user = JSON.parse(localStorage.getItem("user-cred"));
       console.log(user);
@@ -187,8 +213,6 @@
             console.error(error);
           });
       }
-      const displayElement = document.querySelector("#display-element");
-      displayElement.innerHTML = `Order ID: ${orderID}`;
     </script>
 
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>

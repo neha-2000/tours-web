@@ -146,16 +146,15 @@ function reloadBookings() {
 function setUserTable(data) {
     let useDiv = document.createElement('div');
     useDiv.id = "userScreenDiv";
-    let userForm = document.createElement('div');
-    userForm.innerHTML = `<div style="display:flex; padding: 20px; ">
-    
-    <input
+    let userForm = document.createElement('form');
+    userForm.innerHTML = `<input
+    style="width: 90%;"
     type="text"
     id="myInput"
     onkeyup="searchUserFunction()"
-    placeholder="Search for names.."
+    placeholder="Search for users.."
     class="mysearch"
-  /></div>
+  />
   `
     let table = document.createElement('table');
     table.id = "myUserTable";
@@ -193,7 +192,7 @@ function setPackagesTable(data) {
     packageDiv.id = "packageDiv";
     let packageForm = document.createElement('form');
     packageForm.innerHTML = `<input type="text" id="myPackageInput" onkeyup="searchPackageFunction()" class="mysearch"
-    placeholder="Search for names.." />
+    placeholder="Search for pacakges.." />
  `
     let table = document.createElement('table');
     table.id = "packageTable";
@@ -255,7 +254,7 @@ function setPackagesTable(data) {
     packageDiv.append(table);
     packageDiv.append(addPackageForm);
     packScreen.append(packageDiv)
-    addPackageEvent();
+    // addPackageEvent();
     submitPackageButton();
     console.log("Running Set Pack");
     const fileInput = document.querySelector('input[type="file"]');
@@ -431,13 +430,13 @@ function sortPackageTable(n) {
     }
 }
 
-function addPackageEvent() {
-    document
-        .getElementById("addPackageButton")
-        .addEventListener("click", function () {
-            document.getElementById("addPackageForm").style.display = "block";
-        });
-}
+// function addPackageEvent() {
+//     document
+//         .getElementById("addPackageButton")
+//         .addEventListener("click", function () {
+//             document.getElementById("addPackageForm").style.display = "block";
+//         });
+// }
 
 function submitPackageButton() {
     document
@@ -589,6 +588,7 @@ function setBookingsTable(data) {
     bookingDiv.id = 'bookingDiv';
     let bookingInp = document.createElement('input');
     bookingInp.type = 'text';
+    bookingInp.placeholder='Search bookings'
     bookingInp.classList.add('mysearch');
     bookingInp.id = "bookingSearchBar";
     bookingInp.onkeyup = searchBookingFunction;
@@ -663,8 +663,12 @@ function setBookingsTable(data) {
         table.appendChild(row);
     }
     let bookingScreen = document.getElementById('bookings-screen');
-    bookingDiv.append(bookingInp);
-    bookingDiv.append(searchBtn);
+    let searchinput= document.createElement('form');
+    searchinput.append(bookingInp);
+    searchinput.append(searchBtn);
+    bookingDiv.append(searchinput);
+    // bookingDiv.append(bookingInp);
+    // bookingDiv.append(searchBtn);
     bookingDiv.append(table);
     bookingScreen.append(bookingDiv);
 }
