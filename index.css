@@ -746,11 +746,14 @@ padding: 1rem 0;
     /* position: fixed; */
     /* top: 205px; */
     overflow: scroll;
+    overflow: hidden;
     
 }
 
 table{
   width: 90%;
+  overflow: hidden;
+    box-shadow: 0 1rem 2rem rgb(0 0 0 / 10%);
 }
 
 tbody{
@@ -843,7 +846,7 @@ tr{
   color: black;
   padding: 20px;
   width: 80%;
-  border-radius: 10px 0px 0px 10px;
+  /* border-radius: 10px 0px 0px 10px; */
 
   /* position: relative;
   right: -315px; */

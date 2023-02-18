@@ -139,20 +139,22 @@ function reloadBookings() {
         });
 }
 
+{/* <button type="button" class="searchbtn"
+   
+   >Search</button> */}
+
 function setUserTable(data) {
     let useDiv = document.createElement('div');
     useDiv.id = "userScreenDiv";
-    let userForm = document.createElement('form');
-    userForm.innerHTML = `<input
+    let userForm = document.createElement('div');
+    userForm.innerHTML = `<div><input
     type="text"
     id="myInput"
     onkeyup="searchUserFunction()"
     placeholder="Search for names.."
     class="mysearch"
-  />
-  <button type="button" class="searchbtn"
-   
-  >Search</button>`
+  /></div>
+  `
     let table = document.createElement('table');
     table.id = "myUserTable";
     table.innerHTML = `<tr>
