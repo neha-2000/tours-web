@@ -139,20 +139,24 @@ function reloadBookings() {
         });
 }
 
+{/* <button type="button" class="searchbtn"
+   
+   >Search</button> */}
+
 function setUserTable(data) {
     let useDiv = document.createElement('div');
     useDiv.id = "userScreenDiv";
-    let userForm = document.createElement('form');
-    userForm.innerHTML = `<input
+    let userForm = document.createElement('div');
+    userForm.innerHTML = `<div style="display:flex; padding: 20px; ">
+    
+    <input
     type="text"
     id="myInput"
     onkeyup="searchUserFunction()"
     placeholder="Search for names.."
     class="mysearch"
-  />
-  <button type="button" class="searchbtn"
-   
-  >Search</button>`
+  /></div>
+  `
     let table = document.createElement('table');
     table.id = "myUserTable";
     table.innerHTML = `<tr>
@@ -190,10 +194,7 @@ function setPackagesTable(data) {
     let packageForm = document.createElement('form');
     packageForm.innerHTML = `<input type="text" id="myPackageInput" onkeyup="searchPackageFunction()" class="mysearch"
     placeholder="Search for names.." />
-  <button type="button" style="background-color: rgba(255, 166, 0, 0.401); float: right ;padding: 10px;
-  border-radius: 10px; cursor: pointer; color: orange;">Search</button>
-  <button type="button" id="addPackageButton" style="background-color: orange; float: right ;padding: 10px;
-  border-radius: 10px; cursor: pointer; color: white;">Add Package + </button>`
+ `
     let table = document.createElement('table');
     table.id = "packageTable";
     table.innerHTML = `<tr>
@@ -592,8 +593,7 @@ function setBookingsTable(data) {
     bookingInp.id = "bookingSearchBar";
     bookingInp.onkeyup = searchBookingFunction;
     let searchBtn = document.createElement('button');
-    searchBtn.classList.add('searchbtn');
-    searchBtn.innerHTML = "Search";
+    
     let table = document.createElement('table');
     table.classList.add("bookingsTable");
     table.id = "bookingsTable"

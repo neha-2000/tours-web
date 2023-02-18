@@ -328,7 +328,8 @@ function getPackages() {
                 // Create a new element for each order
                 const orderElement = document.createElement("div");
                 orderElement.innerHTML = ` <div class="box">
-                     <img src=${order.image} alt="img">
+                     <img src="${order.image}" alt="img">
+                     
                     
                     <div class="content">
                         <h3> <i class="fas fa-map-marker-alt"></i> ${order.destination} </h3>
